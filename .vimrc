@@ -1,53 +1,29 @@
 let mapleader = "\\"
 set nu
+nmap , <Leader>
 map <F2> <ESC>:q!<CR>
+map <F5> <ESC>G:e<CR>
+map <F8> <ESC>:GrepBuffer<CR>
+map nn <ESC>:cn<CR>
+map pp <ESC>:cp<CR>
+map <F9> <ESC>:cclose<CR>
+map <F10> <ESC>:copen<CR>
+map topo <ESC>:!topo %<CR>
+map topo2 <ESC>:!topo2 %<CR>
+map <F12> <ESC>Gdgg<ESC>:read !inclog<CR><ESC>:w<CR>gg
 nmap qq  <ESC>:q!<CR>
-map <F3> <ESC>:w<CR>
+map <F3> <ESC>:wq
 map ss  <ESC>:w<CR>
+map rr  <ESC>:!ruby %<CR>
+map aa <ESC>yy3j0pkJx2kAMR
+map bb <ESC>ggC
 colorscheme koehler
 au GUIENTER * simalt ~x
 set guifont=Courier\ New\ 16
 set backup
 set backupext=.bak
 set autoread
-"""""""""""""""""""""""""""""""""""""
-set statusline=%F%m%r\ \|\ %Y,%{&fileencoding}\ \|%=\ %l/%L,%c\ \|\ %f
-                            " ..............
-                            " %f    ......
-                            " %F    ........
-                            " %m    ........
-                            " %r    ........
-                            " %Y    ......
-                            " %{&fileformat}
-                            "       ......
-                            " %{&fileencoding}
-                            "       ....
-                            " %b    ........ ASCII ..
-                            " %B    .............
-                            " %l    ......
-                            " %c    ......
-                            " %V    ........ (...........)
-                            " %p    ...........
-                            " %%    ...
-                            " %L    .......
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Alt+....Table.....
-nmap 11 <ESC>:b1<CR>
-nmap 22  <ESC>:b2<CR>
-nmap 33  <ESC>:b3<CR>
-nmap 44  <ESC>:b4<CR>
-nmap 55  <ESC>:b5<CR>
-nmap 66  <ESC>:b6<CR>
-nmap 77  <ESC>:b7<CR>
-nmap 88  <ESC>:b8<CR>
-nmap 99  <ESC>:b9<CR>
-"#nmap  5gt
-"#nmap  6gt
-"#nmap  7gt
-"#nmap  8gt
-"#nmap  9gt
-"#nmap  :tablast<CR>
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " For vundle
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -60,6 +36,7 @@ Bundle 'surround.vim'
 " vwS",ds“.cs"'
 Bundle 'EasyMotion'
 Bundle 'AutoComplPop'
+Bundle 'grep.vim'
 "Bundle 'taglist.vim'
 Bundle 'The-NERD-Commenter'
 Bundle 'vim-multiple-cursors'
@@ -102,6 +79,3 @@ endfunction
 
 colorscheme darkblue
 set hlsearch
-set ignorecase
-map <F4> <ESC>:nohlsearch<CR>
-nmap , <Leader>f
